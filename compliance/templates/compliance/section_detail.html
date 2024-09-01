@@ -1,0 +1,15 @@
+{% extends 'compliance/base.html' %}
+
+{% block title %}{{ section.standard.name }} - {{ section.section_number }}{% endblock %}
+
+{% block content %}
+<h2>{{ section.standard.name }} - {{ section.section_number }}</h2>
+<p>{{ section.title }}</p>
+<p>{{ section.description }}</p>
+<h3>Compliance Items</h3>
+<ul>
+    {% for compliance in compliance_items %}
+        <li><a href="{% url 'compliance_detail' compliance.pk %}">{{ compliance.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

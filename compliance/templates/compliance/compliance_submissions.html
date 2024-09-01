@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Compliance Submissions</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Submission ID</th>
+            <th>Business</th>
+            <th>Submitted At</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for submission in submissions %}
+        <tr>
+            <td>{{ submission.id }}</td>
+            <td>{{ submission.business.username }}</td>
+            <td>{{ submission.submitted_at|date:"F d, Y, g:i a" }}</td>
+            <td>{{ submission.status_message }}</td>
+            <td>
+                <a href="{% url 'staff_document_detail' submission.id %}" class="btn btn-primary">View Document</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

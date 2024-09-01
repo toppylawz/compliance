@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+{% block title %}View Compliance{% endblock %}
+{% block content %}
+    <h1>View Compliance Document</h1>
+    <div>
+        <h2>Document: {{ document.file.name }}</h2>
+        <p>Uploaded by: {{ document.staff.username }}</p>
+        <p>Uploaded on: {{ document.uploaded_at }}</p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th colspan="5" style="text-align: center;">ISO 27001 BUSINESS CONTINUITY CHECKLIST</th>
+                </tr>
+                <tr>
+                    <th>Requirement Section/Category</th>
+                    <th>Assessment</th>
+                    <th>In Compliance (Yes)</th>
+                    <th>Not Compliance (No)</th>
+                    <th>Compliance Remarks</th>
+                    <th>Business Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                <tr>
+                    <td>{{ row|get_item:"requirement_section_category" }}</td>
+                    <td>{{ row|get_item:"assessment" }}</td>
+                    <td>{{ row|get_item:"in_compliance" }}</td>
+                    <td>{{ row|get_item:"not_compliance" }}</td>
+                    <td>{{ row|get_item:"compliance_remarks" }}</td>
+                    <td>{{ row|get_item:"business_remarks" }}</td>
+                    <td>
+                        <input type="radio" name="compliance_rows_{{ forloop.counter }}" value="yes"> Yes
+                        <input type="radio" name="compliance_rows_{{ forloop.counter }}" value="no"> No
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Submit Checklist</button>
+    </form>
+{% endblock %}

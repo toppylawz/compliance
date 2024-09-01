@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Ignore environment variables and settings
+.env
+iso_accreditation/settings.py
+compliance/forms.py
+compliance/views.py
+compliance/urls.py
+# SQL files
+*.sql
+
+# Ignore static and media files
+staticfiles/
+media/
+
+# Ignore Jupyter Notebook files
+*.ipynb_checkpoints
+
+# VS Code settings
+.vscode/
+
+# Ignore macOS file system files
+.DS_Store
+
+# Ignore virtual environments
+venv/
+env/

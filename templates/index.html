@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Compliance Application{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="welcome">
+        <h2>Welcome to the Compliance Team</h2>
+        <p>Your Roadmap for Becoming ISO 27001 Certified</p>
+        <p>This platform helps small businesses achieve ISO 27001 certification. ISO 27001 certification demonstrates a strategic milestone for any business to show commitment towards information security. It demonstrates organizations' trust with clients and stakeholders, which is particularly important for small businesses looking to safeguard their information assets and gain trust with customers, partners, and regulatory bodies.</p>
+    </section>
+
+    <section class="roadmap">
+        <h3>Roadmap to ISO 27001 Certification</h3>
+        <p>Our platform provides a comprehensive checklist that streamlines the necessary steps to help navigate the certification process effectively.</p>
+
+        <ol>
+            <li>
+                <h4>Initiation and Planning</h4>
+                <p><strong>Understand ISO 27001 Requirements and Context:</strong> Our compliance team will support you to help familiarize your team with the ISO 27001 standard and its requirements. This includes studying the ISO 27001 standard’s structure, the Annex A controls, and the requirements for an ISMS.</p>
+                <p><strong>Top Management Commitment:</strong> This involves informing and securing management support and commitment. Providing resources and authority allocation to the ISMS project. Establish an ISMS project team with defined roles and responsibilities.</p>
+                <p><strong>Project Planning:</strong> Develop a project plan that streamlines the scope, objectives, timelines, and resources required for ISO 27001 implementation. This project plan will serve as a roadmap. Our compliance platform is equipped with features of tailoring different checklists on how to present a business case highlighting the benefits of certification, such as improved security posture, customer trust, and regulatory compliance to management.</p>
+            </li>
+            <li>
+                <h4>Establishment</h4>
+                <p><strong>Understanding the Organization Requirements:</strong> Analyze internal and external issues affecting the ISMS based on (Clause 4.1), including the business location and regulatory processes. This analysis will help to identify threats and opportunities that could impact the ISMS. Our compliance platform provides a structured checklist for documenting factors that could potentially impact the ISMS.</p>
+                <p><strong>Recognizing Interested Parties:</strong> Identify and document the needs and expectations of interested parties following (Clause 4.2) such as employees and customers.</p>
+                <p><strong>Define the Scope of the ISMS:</strong> Determine which parts of the organization and what information assets the ISMS will cover (Clause 4.3). This involves identifying critical business processes, assets, and systems, and defining the physical, organizational, and technological boundaries of the ISMS. A small business might tailor the scope to its customer data handling processes and IT infrastructure.</p>
+            </li>
+            <li>
+                <h4>Risk Assessment and Treatment</h4>
+                <p><strong>Risk Assessment:</strong> Identify and evaluate information security risks (Clause 6.1.2, Clause 8.2). Perform a risk assessment to identify vulnerabilities and threats to the organization’s information assets. This involves applying a risk assessment methodology to evaluate the likelihood and impact of risks, such as unauthorized access or data breaches.</p>
+                <p><strong>Develop and Implement a Risk Treatment Plan:</strong> Define how identified risks will be managed (Clause 6.1.3, Clause 8.3), including selecting appropriate controls from Annex A.</p>
+            </li>
+            <li>
+                <h4>ISMS Framework Development</h4>
+                <p><strong>Policy and Objectives:</strong> Create policies and procedures that form the backbone of the ISMS (Clause 5.2, Clause 6.2). Our compliance platform provides a guide on how to draft and approve documents covering security policies, risk management, incident response, and more. For samples of policy templates, we recommend the SANS institute templates for security policies, which can be customized and tailored to specific ISMS needs. (visit <a href="https://www.sans.org/information-security-policy/">SANS institute</a>).</p>
+                <p><strong>ISMS Documentation:</strong> Develop necessary ISMS documentation, including policies and procedures, and records (Clause 7.5). These documents are to be accessible and maintained.</p>
+            </li>
+            <li>
+                <h4>Operation</h4>
+                <p><strong>Resource Allocation:</strong> Allocate necessary resources needed for the ISMS, including personnel, technology, and budget (Clause 7.1). This will ensure proper support and funding.</p>
+                <p><strong>Awareness:</strong> Assign competent personnel and ensure that they go through training and maintain awareness of information security (Clause 7.2, Clause 7.3).</p>
+            </li>
+            <li>
+                <h4>Implementation of Annex A Control</h4>
+                <p><strong>Tailored Approach:</strong> ISO 27001:2023 Annex A controls recognize that organizations have a unique set of information security needs and challenges. The standards show flexibility especially when implementing Annex A controls. The Annex does not follow a one-size-fits-all approach rather ISO 27001:2023 allows organizations to choose specific controls that fit their unique risk profile, business objective, and regulatory requirements.</p>
+                <p><strong>Approach in Understanding ISO 27001:2023 Annex A:</strong> Annex A of ISO 27001:2023 and ISO 27002:2022 provides a comprehensive list of security controls that businesses can implement to mitigate risks and protect their information assets. These controls are categorized into organization, people, physical, and technological controls. As much as Annex A provides a robust framework, not all controls are relevant to some organizations.</p>
+                <p><strong>Customizing ISO 27001:2023 and ISO 27002:2022 Annex A Control Set:</strong> For effective and efficient implementation, it’s essential to tailor the Annex A controls to fit organization-specific needs. This process involves conducting a thorough risk assessment, aligning with business objectives, considering regulatory requirements, and balancing cost and benefits.</p>
+            </li>
+            <li>
+                <h4>Prepare for the Certification Audit</h4>
+                <p>Get ready for the formal ISO 27001 audit. This involves conducting a pre-audit to identify and address any gaps. Ensure that all documentation is up to date and employees are aware of their roles. Engage with an external auditor for a gap analysis to ensure readiness. Our compliance platform provides room for you to upload your documentation and policies for review. The staff team will review and give feedback based on the information provided by your team. The feedback will give the percentage level of readiness toward achieving ISO 27001 accreditations.</p>
+            </li>
+            <li>
+                <h4>Conduct the Certification Audit</h4>
+                <p>This involves undergoing a formal audit by a certified body. The audit will typically be in two stages: first to review documentation and the second to assess the implementation of the ISMS. The external auditor will evaluate compliance with ISO 27001 requirements and the effectiveness of the ISMS.</p>
+            </li>
+            <li>
+                <h4>Achieve Certification and Continual Improvement</h4>
+                <p>Obtain the ISO 27001 certification and maintain compliance. This involves addressing any non-conformities identified during the audit and continuing to improve the ISMS. Our compliance platform will enable your business to update policies and procedures, conduct risk assessments, and schedule surveillance audits to maintain certification.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section class="get-started">
+        <h3>Get Started with Compliance Application</h3>
+        <p>Join us today and streamline your compliance process. Click the button below to begin.</p>
+        <a href="{% url 'profile_view' %}" class="btn">View Profile</a>
+    </section>
+
+    <section class="testimonials">
+        <h3>What Our Users Say</h3>
+        <div class="testimonial">
+            <p>"A user-friendly tool that simplifies the compliance process. Excellent support and resources."</p>
+            <cite>- Yagazie, Compliance Manager at SafeGuard Ltd.</cite>
+        </div>
+    </section>
+</div>
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    .welcome, .roadmap, .get-started, .testimonials {
+        margin-bottom: 2rem;
+    }
+    .roadmap h3 {
+        margin-top: 2rem;
+    }
+    .roadmap ol {
+        list-style: decimal inside;
+    }
+    .roadmap li {
+        margin-bottom: 1.5rem;
+    }
+    .get-started {
+        text-align: center;
+        margin: 4rem 0;
+    }
+    .get-started .btn {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .get-started .btn:hover {
+        background-color: #555;
+    }
+    .testimonials {
+        margin: 4rem 0;
+    }
+    .testimonial {
+        background-color: #fff;
+        border-left: 
+        4px solid #333;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    .testimonial cite {
+        display: block;
+        margin-top: 1rem;
+        font-style: normal;
+        color: #666;
+    }
+</style>
+{% endblock %}

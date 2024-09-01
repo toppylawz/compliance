@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Business Dashboard</h1>
+
+    <h2 class="mt-4">Document Upload Progress</h2>
+    <div class="progress mb-4">
+        <div class="progress-bar" role="progressbar" style="width: {{ progress_percentage }}%;" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ progress }} of {{ total_checklists }}</div>
+    </div>
+
+    <h2>Uploaded Documents</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Document Name</th>
+                <th>Uploaded At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for document in documents %}
+            <tr>
+                <td><a href="{% url 'business_document_detail' document.id %}">{{ document.file.name }}</a></td>
+                <td>{{ document.uploaded_at|date:"F d, Y, g:i a" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">Submitted Compliance</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Compliance Document</th>
+                <th>Submitted At</th>
+                <th>Progress</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for submission in submissions %}
+            <tr>
+                <td><a href="{% url 'business_submission_detail' submission.id %}">{{ submission.compliance.file.name }}</a></td>
+                <td>{{ submission.submitted_at|date:"F d, Y, g:i a" }}</td>
+                <td>
+                    <div class="progress">
+                        {% if submission.approved %}
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%;">Approved</div>
+                        {% elif submission.rejected %}
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;">Rejected</div>
+                        {% elif submission.feedback %}
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 75%;">Feedback Received</div>
+                        {% else %}
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 25%;">Not Reviewed</div>
+                        {% endif %}
+                    </div>
+                </td>
+                <td>{{ submission.feedback }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

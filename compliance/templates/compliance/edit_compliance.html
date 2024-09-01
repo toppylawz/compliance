@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Edit Compliance{% endblock %}
+{% block content %}
+    <h1>Edit Compliance Document</h1>
+    <h2>Remarks</h2>
+    <ul>
+        {% for remark in remarks %}
+        <li>{{ remark.text }} - {{ remark.created_at }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Remark</button>
+    </form>
+{% endblock %}

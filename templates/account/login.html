@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load allauth account %}
+{% load socialaccount %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Sign In</h2>
+                {% if not SOCIALACCOUNT_ONLY %}
+                    <p class="text-center">If you don't have an account yet, please <a href="{{ signup_url }}">sign up</a> first.</p>
+                    {% url 'account_login' as login_url %}
+                    <form method="post" action="{{ login_url }}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        {{ redirect_field }}
+                        <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                    </form>
+                {% endif %}
+                {% if LOGIN_BY_CODE_ENABLED %}
+                    <hr>
+                    <div class="text-center mt-3">
+                        <a class="btn btn-secondary w-100" href="{{ request_login_code_url }}">Mail me a sign-in code</a>
+                    </div>
+                {% endif %}
+                {% if SOCIALACCOUNT_ENABLED %}
+                    <hr>
+                    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+Django==4.2
+django-allauth==0.52.0
+django-grappelli==4.0.1
+pypdf==4.2.0
+openpyxl==3.1.4
+pandas==1.5.3
+xhtml2pdf==0.2.5
+pytz==2021.1
+sqlparse==0.4.1
